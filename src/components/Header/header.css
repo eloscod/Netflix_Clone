@@ -1,0 +1,107 @@
+.header_outer_container {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.7) 10%, transparent);
+  z-index: 1000;
+  transition: all 0.3s;
+}
+
+.header_outer_container.scrolled {
+  background-color: #141414;
+}
+
+.header_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 4%;
+  margin: 0 auto;
+}
+
+.header_left ul,
+.header_right ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 1.5rem;
+}
+
+.header_left ul li,
+.header_right ul li {
+  color: white;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.header_left ul li:hover,
+.header_right ul li:hover {
+  color: #b3b3b3;
+}
+
+.header_right svg {
+  font-size: 1.5rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .header_left ul {
+    gap: 1rem;
+  }
+
+  .header_left ul li {
+    font-size: 0.8rem;
+  }
+
+  .header_right ul {
+    gap: 1rem;
+  }
+
+  .header_right svg {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .header_left ul li:nth-child(n + 3):nth-child(-n + 6) {
+    display: none; /* Hide "TV Shows", "Movies", "Latest", "My List" on smaller screens */
+  }
+
+  .header_left ul {
+    gap: 0.8rem;
+  }
+
+  .header_right ul {
+    gap: 0.8rem;
+  }
+
+  .header_right svg {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .header_left ul li:nth-child(n + 2):nth-child(-n + 6) {
+    display: none; /* Hide all menu items except "Home" and "Browse by Language" on very small screens */
+  }
+
+  .header_left ul {
+    gap: 0.5rem;
+  }
+
+  .header_right ul li:first-child {
+    display: none; /* Hide the search icon on very small screens */
+  }
+
+  .header_right ul {
+    gap: 0.5rem;
+  }
+
+  .header_right svg {
+    font-size: 0.9rem;
+  }
+}

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import instance from "../../utils/axios";
 import requests from "../../utils/requests";
 import "./banner.css";
